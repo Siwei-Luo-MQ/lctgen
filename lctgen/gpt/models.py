@@ -37,7 +37,7 @@ class CodexModel(BasicLLM):
   def llm_query(self, extended_prompt):
     if self.codex_cfg.MODEL == 'debug':
       resp = self.sys_prompt
-    elif self.codex_cfg.MODEL in ("gpt-4", "gpt-3.5-turbo", "gpt-3.5-turbo-16k"):
+    elif self.codex_cfg.MODEL in ("gpt-4", "gpt-3.5-turbo", "gpt-3.5-turbo-16k","gpt-4o"):
       responses = openai.ChatCompletion.create(
               model=self.codex_cfg.MODEL,
               messages=[
